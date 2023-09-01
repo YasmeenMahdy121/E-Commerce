@@ -1,0 +1,66 @@
+nav{
+    background-color: #fdf8f8;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    .logo{
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        img{
+            width: 100%;
+        }
+    }
+    ul {
+      .cart{
+        display: block;
+        margin-inline-end: 10px;
+        position: relative;
+        color: #000;
+        i::before{
+          font-size: 25px;
+          color: #f29a27;
+        }
+        .count{
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -30%);
+          font-size: 15px;
+          font-weight: 700;
+        }
+      }
+        .search input{
+            height: 40px;
+            width: 220px;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            color: #000;
+            font-size: 16px;
+            border-radius: 5px;
+            background: transparent;
+            border: 1px solid #000;
+          }
+          .userName{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #000;
+            font-size: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #f29a27;
+            font-family: cairo, sans-serif;
+          }
+          .logout{
+            cursor: pointer;
+            a{
+                color: #000;
+            }
+          }
+    }
+}

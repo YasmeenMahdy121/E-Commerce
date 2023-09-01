@@ -1,0 +1,23 @@
+<div class="product">
+    <div class="product-img">
+        <img src="{{productData.image}}" alt="load...">
+    </div>
+    <div class="product-details">
+        <h3 class="product-title">{{productData.title}}</h3>
+        <div class="rating">
+            <p class="reviews">{{productData.reviews}}</p>
+        </div>
+        <span class="product-price">{{productData.price}}  EGP</span>
+        <span class="description">Description</span>
+        <p class="description-p">{{productData.description}}</p>
+        <div class="product-quantity">
+            <span>Qty</span>
+            <div class="count">
+                <span class="subtract" (click)="decreaseProduct()">-</span>
+                <span class="counter">{{productData.count}}</span>
+                <span class="add" (click)="increaseProduct()">+</span>
+            </div>
+        </div>
+        <button (click)="removeProduct()">Remove</button>
+    </div>
+</div>

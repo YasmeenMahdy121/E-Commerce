@@ -1,0 +1,17 @@
+<section class="shopping-cart container">
+    <div class="cart">
+        <div class="products">
+            <ng-container *ngFor="let product of cartProducts|keyvalue">
+                <app-cart-product-card [productData]="product.value"></app-cart-product-card>
+            </ng-container>
+            <span *ngIf="!totalPrice" class="cart-empty">Cart is Empty</span>
+        </div>
+        <div class="total-price">
+            <div class="total-amounts-price">
+                <span>Total Price:</span>
+                <span class="price">${{ totalPrice | number : '1.2-2'}}</span>
+            </div>
+            <button [disabled]="!totalPrice" routerLink="/store/checkout" class="proceed-to-buy">Checkout</button>
+        </div>
+    </div>
+</section>

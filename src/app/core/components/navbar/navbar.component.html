@@ -1,0 +1,22 @@
+<nav class="container flex justify-content-between align-items-center">
+    <div class="logo" routerLink="/store/product-list">
+        <img src="../../../../assets/img/logo.png" alt="">
+    </div>
+    <ul class="flex align-items-center gap-2">
+        <li *ngIf="user.userName">
+            <a routerLink="/store/shopping-cart" class="cart">
+                <i class="pi pi-shopping-cart" style="font-size: 2rem"></i>
+                <span class="count">{{cartLength}}</span>
+            </a>
+        </li>
+        <li class="search">
+            <form (ngSubmit)="searchProducts()">
+                <input type="search" placeholder="Search" name="search" [(ngModel)]="searchTerm">
+            </form>
+        </li>
+        <li *ngIf="user.userName" class="userName flex justify-content-center align-items-center">{{user.userName | slice:0:1}}</li>
+        <li *ngIf="user.userName" class="logout" (click)="logOut()">
+            <a>LogOut</a>
+        </li>
+    </ul>
+</nav>

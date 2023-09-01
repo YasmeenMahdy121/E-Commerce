@@ -1,0 +1,11 @@
+<div class="product">
+    <img class="product-img" src="{{productData.image}}">
+    <p class="description">{{productData.title}}</p>
+    <div class="details">
+        <div class="product-price">
+            <span class="price">{{productData.price}}  EGP</span>
+            <span class="shipping">Free Shipping</span>
+        </div>
+    </div>
+    <button class="add-to-cart" (click)="addToCart()">ADD TO CART</button>
+</div>

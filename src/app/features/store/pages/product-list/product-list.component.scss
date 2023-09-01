@@ -1,0 +1,66 @@
+.product-list{
+    padding: 100px 0px;
+    &.container{
+        width: 95%;
+        margin: auto;
+    }
+}
+:host ::ng-deep {
+    .p-dropdown{
+        width: 200px;
+        padding: 10px 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .p-dropdown-items{
+        width: 150px;
+        padding: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: white;
+        span{
+            display: block;
+            padding: 5px 10px;
+            &:hover{
+                background-color: #fdf8f8;
+            }
+        }
+    }
+}
+.products{
+    margin-top: 30px;
+    display: flex;
+    gap: 30px 20px;
+    flex-wrap: wrap;
+}
+.list-empty{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    line-height: 200px;
+    text-align: center;
+    letter-spacing: 5px;
+    background: -webkit-linear-gradient(#f29a27, #FFE53B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+app-product-card{
+    width: calc((100% - 60px) / 4);
+}
+@media screen and (max-width:992px){
+    app-product-card{
+        width: calc((100% - 40px) / 3);
+    }
+}
+@media screen and (max-width:768px){
+    app-product-card{
+        width: calc((100% - 20px) / 2);
+    }
+}
+@media screen and (max-width:576px){
+    app-product-card{
+        width: 100%;
+    }
+}

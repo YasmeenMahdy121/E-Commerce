@@ -1,0 +1,12 @@
+<section class="product-list container">  
+    <div>
+        <p-dropdown [options]="categories" [(ngModel)]="selectedCategory" optionLabel="name"></p-dropdown>
+    </div>
+
+    <section class="products">
+        <ng-container *ngFor="let product of productsList | productsFilteration:selectedCategory.code">
+            <app-product-card [productData]="product"></app-product-card>
+        </ng-container>
+    </section>
+    <span *ngIf="!(productsList | productsFilteration:selectedCategory.code).length" class="list-empty">There are no products</span>
+</section>

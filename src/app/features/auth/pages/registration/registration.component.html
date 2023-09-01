@@ -1,0 +1,35 @@
+<section class="login">
+    <div class="wrapper">
+        <form [formGroup]="registrationForm" (ngSubmit)="register()">
+          <h2>Sign Up</h2>
+            <div class="input-field">
+                <input type="text" required formControlName="userName">
+                <label>Enter your full name</label>
+            </div>
+            <div *ngIf="userName?.invalid &&userName?.touched" class="error-message-container">
+                <small *ngIf="userName?.errors?.['required']">Name required</small>
+                <small *ngIf="userName?.errors?.['pattern']">Invalid name</small>
+            </div>
+            <div class="input-field">
+                <input type="text" required formControlName="email">
+                <label>Enter your email</label>
+            </div>
+            <div *ngIf="email?.invalid &&email?.touched" class="error-message-container">
+                <small *ngIf="email?.errors?.['required']">Email required</small>
+                <small *ngIf="email?.errors?.['pattern']">Invalid email</small>
+            </div>
+            <div class="input-field">
+                <input type="password" required formControlName="password">
+                <label>Enter your password</label>
+            </div>
+            <div *ngIf="password?.invalid &&password?.touched" class="error-message-container">
+                <small *ngIf="password?.errors?.['required']">password required</small>
+                <small *ngIf="password?.errors?.['pattern']">Invalid password</small>
+              </div>
+            <button type="submit" [disabled]="registrationForm.invalid">Sign Up</button>
+            <div class="register">
+                <p>already have an account? <a routerLink="/auth/login">Login</a></p>
+            </div>
+        </form>
+      </div>
+</section>
