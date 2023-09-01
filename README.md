@@ -1,27 +1,50 @@
-# ECommerce
+# Angular Ecommerce Web App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
-## Development server
+## Functionality
+Authorization and Authentication System
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The application allows you to browse the home page for products, add products to your cart for a later checkout.
 
-## Code scaffolding
+Searching for products with a specific name, filter products of a specific categoryز
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You are able to see a preview of the cart on the top bar or even navigate into a more detailed cart page.
 
-## Build
+The checkout process.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Getting Started
 
-## Running end-to-end tests
+The app can be installed by cloning the git repository
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+git clone https://github.com/YasmeenMahdy121/E-Commerce.git
+```
 
-## Further help
+Then cd into E-Commerce directory and run npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+cd E-Commerce
+npm install
+```
+
+After the entire installation you need to run the server and the client by running this command
+
+**Json Server**
+
+```
+npm run json:server
+```
+
+**client**
+
+```
+ng serve
+```
+
+
+
+## Prerequisites
+
+You will need to have node and npm installed.
