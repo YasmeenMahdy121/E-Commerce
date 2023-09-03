@@ -10,6 +10,5 @@
     </section>
     <span *ngIf="!productsList.length" class="list-empty">There are no products</span>
     
-<p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="productsList.length" [rowsPerPageOptions]="[4, 8, 10]"></p-paginator> 
-{{'first: '+first+', rows: '+rows}}
+<p-paginator *ngIf="productsList.length" (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="productsList.length" [rowsPerPageOptions]="[4, 8, 10]"></p-paginator> 
 </section>
