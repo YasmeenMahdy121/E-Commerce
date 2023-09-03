@@ -49,4 +49,4 @@ ng serve
 
 ## Prerequisites
 
-You will need to have node and npm installed.
+You will need to have node, npm and @angular/cli installed.
