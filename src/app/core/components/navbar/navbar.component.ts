@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProductsManagementService } from 'src/app/services/products-management.service';
 
@@ -11,7 +12,7 @@ export class NavbarComponent implements OnInit{
   user:any = {}
   cartLength:number = 0
   searchTerm: string = ''
-  constructor(private authService:AuthService, private pmService:ProductsManagementService){}
+  constructor(private authService:AuthService, private pmService:ProductsManagementService, private router:Router){}
   ngOnInit(): void {
     this.authService.isLoggedIn.subscribe(user=>{
       if(user){
@@ -40,6 +41,8 @@ export class NavbarComponent implements OnInit{
     else{
       this.pmService.getAllProducts()
     }
+    this.pmService.searchedTerm.next(this.searchTerm.trim()!=='')
+    this.router.navigate(['/store/product-list'])
   }
 
   logOut(){

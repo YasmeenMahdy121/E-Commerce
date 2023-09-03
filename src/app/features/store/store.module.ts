@@ -11,6 +11,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { CartProductCardComponent } from './components/cart-product-card/cart-product-card.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PaginatorModule } from 'primeng/paginator';
 
 
 @NgModule({
@@ -24,10 +25,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   imports: [
     CommonModule,
-    FormsModule,
     StoreRoutingModule,
     DropdownModule,
-    SharedModule
+    SharedModule,
+    PaginatorModule
   ]
 })
 export class StoreModule { }

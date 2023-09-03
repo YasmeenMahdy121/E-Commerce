@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { IProduct } from '../features/store/interfaces/IProduct';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
@@ -13,6 +13,7 @@ export class ProductsManagementService {
   baseURL = 'http://[::1]:3000/'
   productsList = new BehaviorSubject<IProduct[]|[]>([])
   cartProducts = new BehaviorSubject<any>({})
+  searchedTerm = new Subject()
   constructor(private http:HttpClient, private authService:AuthService, private router: Router) { }
 
   getAllProducts(){
@@ -23,6 +24,11 @@ export class ProductsManagementService {
 
   searchProducts(title: string){
     this.http.get(`${this.baseURL}products?title_like=${title}`).subscribe((products:any)=>{
+      this.productsList.next(products)
+    })
+  }
+  productsFilteration(category:string){
+    this.http.get(`${this.baseURL}products?category=${category}`).subscribe((products:any)=>{
       this.productsList.next(products)
     })
   }

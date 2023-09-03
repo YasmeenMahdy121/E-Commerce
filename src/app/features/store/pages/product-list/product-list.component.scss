@@ -8,23 +8,31 @@
 :host ::ng-deep {
     .p-dropdown{
         width: 200px;
-        padding: 10px 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
+        &:not(.p-disabled):hover, &:focus{
+            border-color: #f29a27;
+            box-shadow: #fdbd69b6 0px 2px 8px 0px;
+
+        }
+        &.p-focus{
+            border-color: #f29a27;
+            box-shadow: #fdbd69b6 0px 2px 8px 0px;
+        }
     }
-    .p-dropdown-items{
-        width: 150px;
-        padding: 10px 0;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        background-color: white;
-        span{
-            display: block;
-            padding: 5px 10px;
-            &:hover{
-                background-color: #fdf8f8;
+    .p-dropdown-panel .p-dropdown-items {
+        .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+            color: #495057;
+            background: #e7ded2c5;;
+        }
+        .p-dropdown-item{
+            &.p-highlight {
+                color: #f29a27;
+                background: #f8f2e9;
             }
         }
+
+    }
+    .p-paginator-rpp-options.p-dropdown{
+        width: 80px;
     }
 }
 .products{

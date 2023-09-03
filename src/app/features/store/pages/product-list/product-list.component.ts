@@ -8,16 +8,20 @@ import { IProduct } from '../../interfaces/IProduct';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit{
-  selectedCategory: {name: string, code: string } = { name: 'All', code: 'all' }
-  categories!: {name: string, code: string }[]
   productsList: IProduct[] | [] = []
+  // filter
+  selectedCategory: {category: string, code: string } = { category: 'All', code: '' }
+  categories!: {category: string, code: string }[]
+  // pagination
+  first: number = 0;
+  rows: number = 8;
   constructor(private pmService:ProductsManagementService){
     this.categories = [
-      { name: 'All', code: 'all' },
-      { name: `Women's Clothing`, code: `women's clothing` },
-      { name: `Men's Clothing`, code: `men's clothing` },
-      { name: 'Jewelery', code: 'jewelery' },
-      { name: 'Electronics', code: 'electronics' },
+      { category: 'All', code: '' },
+      { category: `Women's Clothing`, code: `women's clothing` },
+      { category: `Men's Clothing`, code: `men's clothing` },
+      { category: 'Jewelery', code: 'jewelery' },
+      { category: 'Electronics', code: 'electronics' },
     ]
   }
 
@@ -27,6 +31,29 @@ export class ProductListComponent implements OnInit{
       this.productsList = products
     })
     this.pmService.getUserCart()
+    this.resetPaginationWhenSearch()
+  }
+
+  productsFilteration(){
+    if(this.selectedCategory.code!==''){
+      this.pmService.productsFilteration(this.selectedCategory.code)
+    }
+    else{
+      this.pmService.getAllProducts()
+    }
+    // reset pagination
+    this.first = 0;
+  }
+
+  onPageChange(event: any) {
+    this.first = event.first;
+    this.rows = event.rows;
+  }
+  resetPaginationWhenSearch(){
+    this.pmService.searchedTerm.subscribe(term=>{
+    // reset pagination
+    this.first = 0;
+    })
   }
 
 }

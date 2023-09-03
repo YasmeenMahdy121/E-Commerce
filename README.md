@@ -6,6 +6,8 @@ Authorization and Authentication System
 
 The application allows you to browse the home page for products, add products to your cart for a later checkout.
 
+Product list has pagination feature.
+
 Searching for products with a specific name, filter products of a specific categoryز
 
 You are able to see a preview of the cart on the top bar or even navigate into a more detailed cart page.
